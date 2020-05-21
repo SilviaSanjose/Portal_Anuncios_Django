@@ -1,0 +1,67 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+{% block title %} Registrar anuncio {% endblock %}
+
+{% block content %} 
+
+        <form class="large_form"  action="guardar-anuncio" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <h1>Anúnciate con nosotros</h1>
+            <div>
+                <label>Título</label><br/>
+                <input class="title" type="text" name="title" placeholder="Titulo"  required pattern="^[a-zA-Z0-9 ñNÁÉÍÓÚáéíó]{4,60}$" title="Letras o números entre 4 y 60 caracteres"/>
+            </div>
+            <div>
+                <label class="category">Categoría</label>
+                <select name="category">
+                    <option disabled selected>Selecciona</option>
+                    {% for c in categorias %}
+                        <option value="{{ c.id }}">{{ c.nombre_cat}}</option>
+                    {% endfor %}
+                    
+                </select>
+            </div>
+            <div>
+                <label for="price">Precio</label><br/>
+                <input type="text" name="price" placeholder="Precio" required pattern="^[0-9,]+(.[0-9]{2})?$"/>
+                <label for="new_price">Precio a negociar</label>
+                <input type="checkbox" name ="new_price" value="True"/>
+            </div>
+            <div>
+                <label>Descripción</label><br/>
+                <textarea name="message" maxlength="300" placeholder="Máximo 300 caracteres"></textarea>
+            </div>
+            <div>
+                <label>On-line</label>
+                <input type="radio" name="on_line" value="Si">Si</input>
+                <input type="radio" name="on_line" value="No">No</input>
+            </div>
+            <label for="photo">Subir foto</label>
+            <div class="photo">
+                <input type="file" name="photo" id="seleccion-imagen" accept=".jpg"/>
+                <img id="img" src=""/>
+            </div>
+            <input class ="submit my-4" type="submit" value="Registrar"/>
+        </form> 
+<!--Script para ver previsualización de la foto elegida-->
+    <script>
+        function init() {
+            var fichero = document.getElementById('seleccion-imagen');
+            fichero.addEventListener('change', mostrarImagen, false);
+            }
+
+            function mostrarImagen(event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var img = document.getElementById('img');
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+            }
+        window.addEventListener('load', init, false);
+</script>
+
+{% endblock %}
+</body>
+</html>

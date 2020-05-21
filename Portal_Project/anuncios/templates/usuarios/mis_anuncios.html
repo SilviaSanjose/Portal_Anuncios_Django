@@ -1,0 +1,32 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <h4>Aquí tienes tus anuncios publicados:</h4>
+    {% for a in anuncios%}
+    <div class="myanun">
+        <div class="myimg">
+            {% if a.foto == 1 %}
+                <img src="{% static 'images' %}/{{a.id}}.jpg?f={{a.fecha_modificacion}}">
+            {% else %}
+                <img src="{% static 'img' %}/33.jpg" >
+            {% endif%}
+        </div>
+        <div class="mytext">
+            <p>{{ a.titulo}}&nbsp; ({{ a.categoria.nombre_cat}})</p>
+            <div>{{ a.precio}}€&nbsp;
+                {% if a.negociable == 1 %}
+                    (negociable)
+                {% endif%}</div>
+            <div>{{ a.descripcion}}</div>
+            <div>On-line: {{ a.on_line}}</div>
+        </div>
+    </div>
+    <div class="mybtn">
+        <button class = "submit" type="button" > <a href="editar-anuncio?id_editar={{ a.id }}">EDITAR</a></button>
+        <button class = "submit" type="button"><a href="borrar-anuncio?id_borrar={{ a.id }}" onclick="return confirm('Vas a eliminar el anuncio,¿Estas seguro?');">BORRAR</a></button>
+    </div>
+    {% endfor %}
+{% endblock %}

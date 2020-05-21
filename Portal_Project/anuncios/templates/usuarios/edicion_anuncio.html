@@ -1,0 +1,80 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+{% block title %} Edición {% endblock %}
+
+{% block content %}
+
+    <form class="large_form" action="guardar-anuncio-editado" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <img src="{% static 'images' %}/{{anuncio.id}}.jpg?f={{a.fecha_modificacion}}">
+        <h1>Tu Anuncio</h1>
+        
+        <input type="hidden" name="id_anuncio" value="{{ anuncio.id }}"/>
+        <div>
+            <label>Título</label><br/>
+            <input class="title" type="text" name="title" value="{{ anuncio.titulo }}" required pattern="^[a-zA-Z0-9 ñNÁÉÍÓÚáéíó]{4,60}$" title="Letras o números entre 4 y 60 caracteres"/>
+        </div>
+        <div>
+            <label class="category">Categoría</label>
+            <select name="category">
+                {% for c in categorias %}
+                    <option 
+                        {% if c.id == anuncio.categoria.id %}
+                            selected
+                        {% endif %}
+                            value="{{ c.id }}">{{ c.nombre_cat}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="price">Precio</label><br/>
+            <input type="text" name="price" value="{{ anuncio.precio }}" required pattern="^[0-9,]+(.[0-9]{2})?$"/>
+            <label for="new_price">Precio a negociar</label>
+            <input type="checkbox" name ="new_price" value="True"
+                {% if anuncio.negociable == 1 %}
+                    checked
+                {% endif %}/>
+        </div>
+        <div>
+            <label>Descripción</label><br/>
+            <textarea name="message" maxlength="300">{{ anuncio.descripcion }}</textarea>
+        </div>
+        <div>
+            <label>On-line</label>
+            <input type="radio" name="on_line" value="Si" 
+                {% if anuncio.on_line == "Si" %}
+                    checked
+                {% endif %}>Si</input>
+            <input type="radio" name="on_line" value="No"
+                {% if anuncio.on_line == "No" %}
+                    checked
+                {% endif %}>No</input>
+        </div>
+        <label for="photo">Nueva foto</label>
+        <div class="photo">
+            <input type="file" name="photo" id="seleccion-imagen" accept=".jpg"/>
+            <img id="img" src=""/>
+        </div>
+        <input class ="submit my-4" type="submit" value="Editar"/>  
+    </form>
+
+    <!--Script para ver previsualización de la foto elegida-->
+    <script>
+        function init() {
+            var fichero = document.getElementById('seleccion-imagen');
+            fichero.addEventListener('change', mostrarImagen, false);
+            }
+
+            function mostrarImagen(event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var img = document.getElementById('img');
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+            }
+        window.addEventListener('load', init, false);
+</script>
+   
+{% endblock %}

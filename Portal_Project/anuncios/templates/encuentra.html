@@ -1,0 +1,71 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+{% block title %} Anuncios {% endblock %}
+
+{% block content %}
+    <h4 class="h">Encuentra lo que buscas</h4>
+    <form  class="search_form" action="">
+        <label>Título</label>
+        <input type="text" name="titulo" placeholder="Título" value="{{ titulo_bus }}"/>
+        <label>Categoría:</label>
+        <select name="category">
+            <option name="ninguna" disabled selected>Selecciona</option>
+            {% for c in categorias %}
+                <option 
+                {% if c.id == categoria_bus %}
+                    selected
+                {% endif %}
+                    value="{{ c.id }}">{{ c.nombre_cat }}</option>
+            {% endfor %}
+        </select>
+        <input class ="submit my-4" type="submit" value="Buscar"/>
+        <a href="buscar-anuncio">Limpiar</a>
+    </form>
+
+    <div class="container anuncios">
+        <div class="row">
+            {% for a in anuncios %}
+            <div class="col-sm-12 col-md-6 col-lg-4 anu-sep">
+                <div class="anu-box bg-white">
+                    {% if a.foto == 1 %}
+                        <img src="{% static 'images' %}/{{a.id}}.jpg?f={{a.fecha_modificacion}}">
+                    {% else %}
+                        <img src="{% static 'img' %}/33.jpg" >
+                    {% endif%}
+                    <div class="anu_title">
+                        <h5>{{ a.titulo}}</h5>
+                        <p>({{ a.categoria.nombre_cat}})</p>
+                    </div>
+                    <div class="descrip"><p>{{ a.descripcion}}</p></div>
+                    <div class="msg">
+                        <p>Posibilidad on-line: {{ a.on_line}}</p>
+                        <div>{{ a.precio}}€&nbsp;
+                            {% if a.negociable == 1 %}
+                                (negociable)
+                            {% endif%}
+                            &nbsp;&nbsp;</div>
+                        {% if not a.usuario.imagen %}
+                            <div class="perfil perfil_min" style="background-image: url(/static/img/user.png);">
+                                <a href="contacto-anuncios?id_user={{a.usuario.id}}&titulo={{a.titulo}}">Contactar</a>
+                            </div>
+                        {% else %}
+                            <div class="perfil perfil_min" style="background-image: url(/{{a.usuario.imagen}});">
+                                <a href="contacto-anuncios?id_user={{a.usuario.id}}&titulo={{a.titulo}}">Contactar</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+    <div class="paginas">
+        {% if anterior >= 0 %}
+        <a href="buscar-anuncio?comienzo={{ anterior }}&titulo={{ titulo_bus }}">Anterior</a>
+        {% endif %}
+        {% if siguiente < total_anuncios %}
+        <a href="buscar-anuncio?comienzo={{ siguiente }}&titulo={{ titulo_bus }}">Siguiente</a>
+        {% endif %}
+    </div>
+{% endblock %}

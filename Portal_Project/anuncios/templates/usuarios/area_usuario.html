@@ -1,0 +1,15 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+
+{% block title %} Área de usuario {% endblock %}
+
+{% block content %} 
+    <h3>Wellcome {{ usuario_login }}!! </h3>
+    <div class="perfil" style="background-image: url(/{{imagen}});"></div>
+    <br/>
+    <br/>
+    <br/>
+    <p>Ya estás en tu área de usuario, donde puedes publicar nuevos anuncios, acceder a tus anuncios ya publicados, modificarlos
+        o eliminarlos si ya no los necesitas. </p>
+{% endblock %}

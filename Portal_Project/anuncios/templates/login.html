@@ -1,0 +1,22 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+{% block title %} Acceso Usuario {% endblock %}
+
+{% block content %} 
+    <p>{{ error_login }}</p>
+    <p>{{validacion}}</p>
+    <form class="short_form" method="POST" action="acceso-usuario"> {% csrf_token %}
+        <div>
+            <label>Email</label><br/>
+            <input class="email" type="email" name="email" placeholder="Email"/>
+        </div>
+        <div>
+            <label>Contraseña</label><br/>
+            <input class="passwd" type="password" name="passwd" placeholder="Contraseña"/>
+        </div> 
+        <input class ="submit my-4" type="submit" value="Entrar"/>  
+
+    </form>
+
+{% endblock %}
