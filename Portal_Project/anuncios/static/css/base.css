@@ -68,7 +68,7 @@ main {
 }
 .anuncios img {
     width: 100%;
-    height: 220px;
+    height: 281px;
 }
 .descrip {
     height: 197px;
@@ -116,6 +116,9 @@ main {
     margin: 20px auto;
 }
 /*Css Formularios*/
+.error {
+    color: red;
+}
 form {
     margin: auto;
     background-color: white;
@@ -250,6 +253,9 @@ img {
         padding: 0;
         margin:0;
     }
+    .anuncios img {
+        height: 340px;
+    }
 }
 @media (max-width:450px){
     .photo input {
@@ -259,5 +265,8 @@ img {
         display: block;
         padding-top: 11px;
         width: 28%;
+    }
+    .anuncios img {
+        height: 253px;
     }
 }

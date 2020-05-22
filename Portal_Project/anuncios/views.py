@@ -61,7 +61,7 @@ def validar_email(request):
     res = models.Usuario.objects.filter(id = id_send, codigo = codigo_send)
     #Compruebo si la sql da algún resultado
     if len(res)== 0:
-        context = {"validacion": "La verificación de email ha fallado. Intentalo de nuevo"}
+        context = {"error_login": "La verificación de email ha fallado. Intentalo de nuevo"}
         return render(request, "login.html", context)
     else:
         user = res[0]

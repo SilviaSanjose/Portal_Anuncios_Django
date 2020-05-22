@@ -13,8 +13,8 @@
             </div>
             <div>
                 <label class="category">Categoría</label>
-                <select name="category">
-                    <option disabled selected>Selecciona</option>
+                <select name="category" required>
+                    <option value ="" disabled selected>Selecciona</option>
                     {% for c in categorias %}
                         <option value="{{ c.id }}">{{ c.nombre_cat}}</option>
                     {% endfor %}
@@ -29,11 +29,11 @@
             </div>
             <div>
                 <label>Descripción</label><br/>
-                <textarea name="message" maxlength="300" placeholder="Máximo 300 caracteres"></textarea>
+                <textarea name="message" maxlength="300" required placeholder="Máximo 300 caracteres"></textarea>
             </div>
             <div>
                 <label>On-line</label>
-                <input type="radio" name="on_line" value="Si">Si</input>
+                <input type="radio" name="on_line" required value="Si">Si</input>
                 <input type="radio" name="on_line" value="No">No</input>
             </div>
             <label for="photo">Subir foto</label>

@@ -4,11 +4,11 @@
 {% block title %} Registro {% endblock %}
 
 {% block content %}
-    {{ error_email}}
+    <p class="error">{{error_email}}</p>
     <form class="short_form" method="POST" action="registrar-usuario" enctype="multipart/form-data">{% csrf_token %}
         <div>
             <label>Usuario</label><br/>
-            <input class="user" type="text" required name="user" placeholder="Nombre"/>
+            <input class="user" type="text" required name="user" placeholder="Nombre" pattern="^[a-zA-Z0-9_]{5,12}$" title="Letras(ni ñ ni acentos), números o _ , de 5 a 12 caracteres">
         </div>
         <div>
             <label>Email</label><br/>

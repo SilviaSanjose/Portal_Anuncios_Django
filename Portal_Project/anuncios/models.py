@@ -11,7 +11,7 @@ class Categoria(models.Model):
         return self.nombre_cat
     
 class Usuario(models.Model):
-    usuario = models.CharField(max_length = 20)
+    usuario = models.CharField(max_length = 20, unique = True)
     email = models.EmailField(max_length = 70, unique = True)
     contraseña = models.CharField(max_length = 20)
     imagen = models.FileField(upload_to="static/perfiles", null=True)

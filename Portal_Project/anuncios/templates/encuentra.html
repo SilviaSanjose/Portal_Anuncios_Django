@@ -1,5 +1,6 @@
 {% extends "bases/base.html" %}
 {% load static %}
+{% load precio %}
 
 {% block title %} Anuncios {% endblock %}
 
@@ -40,7 +41,7 @@
                     <div class="descrip"><p>{{ a.descripcion}}</p></div>
                     <div class="msg">
                         <p>Posibilidad on-line: {{ a.on_line}}</p>
-                        <div>{{ a.precio}}€&nbsp;
+                        <div>{{ a.precio|precio }}€&nbsp;
                             {% if a.negociable == 1 %}
                                 (negociable)
                             {% endif%}

@@ -4,7 +4,7 @@
 {% block title %} Acceso Usuario {% endblock %}
 
 {% block content %} 
-    <p>{{ error_login }}</p>
+    <p class="error">{{error_login }}</p>
     <p>{{validacion}}</p>
     <form class="short_form" method="POST" action="acceso-usuario"> {% csrf_token %}
         <div>
