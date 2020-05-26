@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 
-User: Silvia my_email, my_pass
+s
 """
 
 import os
@@ -128,7 +128,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "pandpmyweb@gmail.com"
-EMAIL_HOST_PASSWORD = 'japitknyekdlrlfu'
+EMAIL_HOST_USER = "xxxxx@gmail.com"
+EMAIL_HOST_PASSWORD = 'xxxxxxxxxxx'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
