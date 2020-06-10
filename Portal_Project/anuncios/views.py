@@ -48,7 +48,7 @@ def registrar_usuario(request):
         #Envio de email de validación
         user = new_user.id
         html_content = "</br>Hola, por favor verifica tu email: <a href='http://localhost:8000/anuncios/validar-email?id_user={}&codigo={}'>Pincha aqui</a>".format(str(user), codigo)
-        msg = EmailMultiAlternatives("Verifica tu email", "confirma", settings.EMAIL_HOST_USER, [email])
+        msg = EmailMultiAlternatives("Verifica tu email", "confirma", settings.EMAIL_HOST_USER, [email],[settings.EMAIL_HOST_USER])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
         
