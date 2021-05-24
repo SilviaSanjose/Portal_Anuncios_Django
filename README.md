@@ -1,14 +1,11 @@
 <h1 align="center">Welcome to Ad Website 👋</h1>
 <p>
   <a href="https://github.com/SilviaSanjose/SilviaSanjosehub.io.git#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/SilviaSanjose/SilviaSanjosehub.io.git#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/django-3.0.6-green.svg" />
   </a>
 </p>
 
-> Ad Website
+Práctica curso Python para crear un portal de anuncios web. 
 
 ### 🏠 [Homepage](https://github.com/SilviaSanjose/SilviaSanjose.github.io#readme)
 
@@ -31,14 +28,10 @@ python manage.py runserver
 
 👤 **Silvia Sanjosé**
 
-* Website: Silvia Sanjosé
 * Github: [@SilviaSanjose](https://github.com/SilviaSanjose)
 * LinkedIn: [@silvia-sanjose](https://linkedin.com/in/silvia-sanjose)
 
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
