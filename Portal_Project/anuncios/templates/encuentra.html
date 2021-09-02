@@ -5,7 +5,7 @@
 {% block title %} Anuncios {% endblock %}
 
 {% block content %}
-    <h4 class="h">Encuentra lo que buscas</h4>
+    <h4 class="h mt-0">Encuentra lo que buscas</h4>
     <form  class="search_form" action="">
         <label>Título</label>
         <input type="text" name="titulo" placeholder="Título" value="{{ titulo_bus }}"/>
@@ -34,12 +34,12 @@
                     {% else %}
                         <img src="{% static 'img' %}/33.jpg" >
                     {% endif%}
-                    <div class="anu_title">
+                    <div class="sep anu_title">
                         <h5>{{ a.titulo}}</h5>
                         <p>({{ a.categoria.nombre_cat}})</p>
                     </div>
-                    <div class="descrip"><p>{{ a.descripcion}}</p></div>
-                    <div class="msg">
+                    <div class="sep descrip"><p>{{ a.descripcion}}</p></div>
+                    <div class="sep msg">
                         <p>Posibilidad on-line: {{ a.on_line}}</p>
                         <div>{{ a.precio|precio }}€&nbsp;
                             {% if a.negociable == 1 %}
@@ -47,11 +47,11 @@
                             {% endif%}
                             &nbsp;&nbsp;</div>
                         {% if not a.usuario.imagen %}
-                            <div class="perfil perfil_min" style="background-image: url(/static/img/user.png);">
+                            <div class=" sep perfil perfil_min" style="background-image: url(/static/img/user.png);">
                                 <a href="contacto-anuncios?id_user={{a.usuario.id}}&titulo={{a.titulo}}">Contactar</a>
                             </div>
                         {% else %}
-                            <div class="perfil perfil_min" style="background-image: url(/{{a.usuario.imagen}});">
+                            <div class="sep perfil perfil_min" style="background-image: url(/{{a.usuario.imagen}});">
                                 <a href="contacto-anuncios?id_user={{a.usuario.id}}&titulo={{a.titulo}}">Contactar</a>
                             </div>
                         {% endif %}

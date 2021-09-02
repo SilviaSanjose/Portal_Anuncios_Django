@@ -1,273 +1,306 @@
 #body {
-    background-color: #e7e7fb;
+  background-color: #f8f7f7;
 }
 /*Header */
 header {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(129,125,255,1) 100%);
-    box-shadow: 0 0 32px 0 rgba(129,125,255,1);
-    min-height: 111px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  /* background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(129, 125, 255, 1) 100%
+  ); */
+  background-color: rgb(201 200 241);
+  box-shadow: 0 0 32px 0 rgba(129, 125, 255, 1);
+  min-height: 93px;
 }
 header img {
-    width: 90px;
-    border-radius: 12px;
-    margin: 20px 0 0 33px;
+  width: 90px;
+  border-radius: 32px;
+  margin: 10px 0 0 33px;
 }
 header h1 {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 20px 0 0 26px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px 0 0 26px;
+  font-family: fangsong;
+  font-size: 2.8rem;
 }
 menu {
-    padding: 0;
-    float: right;
+  padding: 9px 46px 0 0;
+  float: right;
 }
 header a {
-    color: black;
-    font-weight: bold;
+  color: black;
+  font-weight: bold;
 }
+
 /*Usuario*/
 .perfil {
-    height: 100px;
-    width: 100px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
-    display: flex;
-    align-items: center;
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  display: flex;
+  align-items: center;
 }
 .perfil_min {
-    height: 50px;
-    width: 50px;
+  height: 50px;
+  width: 50px;
 }
 .perfil a {
-    color: black;
-    padding: 62px;
+  color: black;
+  padding: 62px;
 }
 /*Main*/
 main {
-    padding: 186px 30px;
-    background-color: #f8f7f7;
+  padding: 170px 30px 100px 30px;
+  min-height: calc(100vh - 83px);
 }
 .h {
-    margin: 20px;
+  margin: 20px;
 }
 .link {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 .anu-sep {
-    margin-top: 53px;
+  margin-top: 53px;
+}
+.sep {
+  padding: 0px 23px;
 }
 .anu-box {
-    border: 1px solid;
-    height: 100%;
-    padding-bottom: 15px;
+  border: 1px solid #bcb8b8;
+  height: 100%;
+  padding-bottom: 15px;
+  border-radius: 14px;
 }
 .anuncios img {
-    width: 100%;
-    height: 281px;
-    object-fit: cover;
+  width: 100%;
+  height: 281px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0px;
+}
+.anu_title {
+  margin-top: 13px;
 }
 .descrip {
-    height: 197px;
-    display: flex;
-    align-items: center;
+  height: 197px;
+  display: flex;
+  align-items: center;
 }
 .msg div {
-    text-align: right;
+  text-align: right;
 }
 .paginas {
-    margin-top: 32px;
+  margin-top: 32px;
 }
-.paginas a{
-    padding: 0 12px;
-    color: #1400ba
+.paginas a {
+  padding: 0 12px;
+  color: #1400ba;
 }
 .myanun img {
-    width: 200px;
-    height: 180px;
+  width: 200px;
+  height: 180px;
 }
 .myimg {
-    display: inline-block;
-    padding-right: 25px;
+  display: inline-block;
+  padding-right: 25px;
 }
 .mytext {
-    display: inline-block;
-    width: 78%;
-    vertical-align: middle;
+  display: inline-block;
+  width: 78%;
+  vertical-align: middle;
 }
 .mybtn .submit {
-    display: inline;
-    margin: 12px 0 38px;
-    background-color: #787fd5;
-    padding: 0px 10px 5px;
+  display: inline;
+  margin: 12px 0 38px;
+  background-color: #787fd5;
+  padding: 0px 10px 5px;
 }
 .mybtn a {
-    color: white;
-    font-size: small;
+  color: white;
+  font-size: small;
 }
 .user_info {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 .user_info div {
-    margin: 20px auto;
+  margin: 20px auto;
 }
 /*Css Formularios*/
 .error {
-    color: red;
+  color: red;
 }
 form {
-    margin: auto;
-    background-color: white;
-    color: #787fd5;
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 26px;
-    box-shadow: 0px 0px 49px -3px #787fd559;
+  margin: auto;
+  background-color: white;
+  color: #787fd5;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0px 0px 49px -3px #787fd559;
 }
 .short_form {
-    max-width: 288px;
+  max-width: 390px;
+  padding: 18px 33px;
+}
+.short_form input {
+  width: 100%;
+  border-radius: 5px;
+}
+.short_form .submit {
+  width: 145px;
+}
+.short_form .photo input {
 }
 .large_form {
-    max-width: 514px;
+  max-width: 514px;
 }
-.large_form textarea, .email_form textarea {
-    width: 100%;
-    height: 122px;
-    resize: none;
+.large_form textarea,
+.email_form textarea {
+  width: 100%;
+  height: 122px;
+  resize: none;
 }
 .email_form textarea {
-    background-color: #f8f7f7;
-    border: none;
-    border-bottom: 1px solid;
+  background-color: #f8f7f7;
+  border: none;
+  border-bottom: 1px solid;
 }
 .photo input {
-    border: none;
-    width: 100%;
+  border: none;
+  width: 100%;
 }
 .large_form img {
-    width: 100px;
-    display: inline-block;
+  width: 100px;
+  display: inline-block;
 }
 .large_form h1 {
-    display: inline-block;
-    padding-left: 20px;
+  display: inline-block;
+  padding-left: 20px;
 }
 .photo {
-    margin: 0;
+  margin: 0;
 }
 .photo input {
-    padding: 0;
-    width: 70%;
+  padding: 0;
 }
 .photo img {
-    width: 19%;
+  width: 19%;
 }
 .search_form {
-    box-shadow: none;
-    background-color: #f8f7f7;
-    padding: 0 26px;
-    max-width: 765px;
+  box-shadow: none;
+  background-color: #f8f7f7;
+  padding: 0 26px;
+  max-width: 765px;
 }
 .search_form .submit {
-    display: inline;
-    margin-left: 20px;
-    background-color: #787fd5;
+  display: inline;
+  margin-left: 20px;
+  background-color: #787fd5;
 }
-.search_form input, .search_form select {
-    margin-right: 20px;
-    background-color: #f8f7f7;
-    border: none;
-    border-bottom: 1px solid;
+.search_form input,
+.search_form select {
+  margin-right: 20px;
+  background-color: #f8f7f7;
+  border: none;
+  border-bottom: 1px solid;
 }
 .search_form a {
-    color: #787fd5;
+  color: #787fd5;
 }
 .email_form {
-    max-width: 478px;
-    display: inline-block;
-    width: 100%;
-    margin-left: 10%;
+  max-width: 478px;
+  display: inline-block;
+  width: 100%;
+  margin-left: 10%;
 }
 form h1 {
-    text-align: center;
-    margin-bottom: 35px;
+  text-align: center;
+  margin-bottom: 35px;
 }
 form div {
-    margin: 13px 0;
+  margin: 13px 0;
 }
-form input, form textarea {
-    background-color: white;
-    color: #1400ba;
-    border: 1px solid #b2aaef;
-    border-bottom: solid 2px #1400ba;
-    padding: 5px 10px;
-    resize: none;
+form input,
+form textarea {
+  background-color: white;
+  color: #1400ba;
+  border: 1px solid #b2aaef;
+  border-bottom: solid 2px #1400ba;
+  padding: 5px 10px;
+  resize: none;
 }
 .title {
-    width: 100%;
+  width: 100%;
 }
 select {
-    background-color: white;
-    color: #1400ba;
-    border-color: #b2aaef;
+  background-color: white;
+  color: #1400ba;
+  border-color: #b2aaef;
 }
 .submit {
-    display: block;
-    border-radius: 11px;
-    border: solid 1px;
-    background-color: #1400ba;
-    color: white;
-    padding: 5px 25px 7px;
-    margin: 0 auto 29px;
+  display: block;
+  border-radius: 11px;
+  border: solid 1px;
+  background-color: #787fd5;
+  color: white;
+  padding: 5px 25px 7px;
+  margin: 0 auto 29px;
 }
 /*Footer*/
 footer {
-    margin-bottom: 49px;
-    text-align: center;
-    padding: 10px 30px;
+  text-align: center;
+  padding: 10px 30px;
+  background-color: rgb(231, 231, 251);
+  overflow: hidden;
 }
-.django  {
-    float: left;
+footer p {
+  margin-bottom: 0;
+}
+.django {
+  float: left;
 }
 .rrss {
-    float: right;
+  float: right;
+  padding-right: 25px;
 }
 img {
-    width: 39px;
+  width: 39px;
 }
 
 @media (max-width: 554px) {
-    main {
-        padding: 222px 30px;
-    }
+  main {
+    padding: 222px 30px;
+  }
 }
-@media (max-width: 767px){
-    .descrip {
-        height: auto;
-    }
-    .email_form {
-        padding: 0;
-        margin:0;
-    }
-    .anuncios img {
-        height: 340px;
-    }
+@media (max-width: 767px) {
+  .descrip {
+    height: auto;
+  }
+  .email_form {
+    padding: 0;
+    margin: 0;
+  }
+  .anuncios img {
+    height: 340px;
+  }
 }
-@media (max-width:450px){
-    .photo input {
-        width: 100%;
-    }
-    .photo img {
-        display: block;
-        padding-top: 11px;
-        width: 28%;
-    }
-    .anuncios img {
-        height: 253px;
-    }
+@media (max-width: 450px) {
+  .photo input {
+    width: 100%;
+  }
+  .photo img {
+    display: block;
+    padding-top: 11px;
+    width: 28%;
+  }
+  .anuncios img {
+    height: 253px;
+  }
 }

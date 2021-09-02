@@ -1,50 +1,79 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
-    {% block link %}   {% endblock %}
-    <title> {% block title %}  {% endblock %} </title>
-</head>
-<body id="body">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/anuncios.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.ico' %}"
+    />
+    {% block link %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body id="body">
     <header>
-        <img src="{% static 'img/p&p.jpg' %}">
-        <h1><a class="nav-link" href="/anuncios">P&P</a></h1>
-        <menu>
-            <ul class="nav justify-content-center">
-
-                <li class="nav-item"><a class="nav-link" href="buscar-anuncio">ENCUENTRA</a></li>
-                {% if "id_usuario" in request.session %}
-                <li class="nav-item"><a class="nav-link" href="registar-anuncio">ANÚNCIA</a></li>
-                <li class="nav-item"><a class="nav-link" href="mis-anuncios">MIS ANUNCIOS</a> </li>
-                <li class="nav-item"><a class="nav-link" href="cerrar-sesion">CERRAR SESIÓN</a></li>
-                {% else %}
-                <li class="nav-item"><a class="nav-link" href="registrarse">REGISTRATE</a></li>
-                <li class="nav-item"><a class="nav-link" href="login">INICIA SESION</a></li>
-                {% endif %}
-                
-              </ul>
-        </menu>
-    </header> 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+      <img src="{% static 'img/p&p.jpg' %}" />
+      <h1><a class="nav-link" href="/anuncios">P&P</a></h1>
+      <menu>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="buscar-anuncio">ENCUENTRA</a>
+          </li>
+          {% if "id_usuario" in request.session %}
+          <li class="nav-item">
+            <a class="nav-link" href="registar-anuncio">ANÚNCIA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mis-anuncios">MIS ANUNCIOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cerrar-sesion">CERRAR SESIÓN</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="registrarse">REGISTRATE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">INICIA SESION</a>
+          </li>
+          {% endif %}
+        </ul>
+      </menu>
+    </header>
+    <main class="container">{% block content %} {% endblock %}</main>
     <footer>
-        <p>© P&P 2020 </p>
-        <div>
-            <p class="django">Django<sup>®</sup></p>
-            <div class="rrss">
-                <a href="https://www.facebook.com/pollitopeskaito" target="blank"><img src="{% static 'img/Facebook.png' %}"> </a>
-                <a href="https://github.com/SilviaSanjose" target="blank"><img src="{% static 'img/Github.png' %}"> </a>
-                <a href="https://www.instagram.com/pollito_y_peskaito/" target="blank"><img src="{% static 'img/Instagram.png' %}"> </a>
-                <a href="http://linkedin.com/in/silvia-sanjose" target="blank"><img src="{% static 'img/Linkedin.png' %}"> </a>
-            </div>
+      <p>© P&P</p>
+      <div>
+        <p class="django">Django<sup>®</sup></p>
+        <div class="rrss">
+          <a href="https://www.facebook.com/pollitopeskaito" target="blank"
+            ><img src="{% static 'img/Facebook.png' %}" />
+          </a>
+          <a href="https://github.com/SilviaSanjose" target="blank"
+            ><img src="{% static 'img/Github.png' %}" />
+          </a>
+          <a href="https://www.instagram.com/pollito_y_peskaito/" target="blank"
+            ><img src="{% static 'img/Instagram.png' %}" />
+          </a>
+          <a href="http://linkedin.com/in/silvia-sanjose" target="blank"
+            ><img src="{% static 'img/Linkedin.png' %}" />
+          </a>
         </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
