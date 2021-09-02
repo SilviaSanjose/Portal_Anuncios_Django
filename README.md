@@ -5,19 +5,20 @@
   </a>
 </p>
 
-Práctica curso Python para crear un portal de anuncios web. 
+Práctica curso Python para crear un portal de anuncios web.
 
 ### 🏠 [Homepage](https://github.com/SilviaSanjose/SilviaSanjose.github.io#readme)
 
-
 ### ✨ Demo
-  http://silvisil.pythonanywhere.com/anuncios/
+
+http://silvisil.pythonanywhere.com/anuncios/
 
 ## Install
 
 ```sh
 pip install django
 ```
+
 ## Run
 
 ```sh
@@ -28,15 +29,13 @@ python manage.py runserver
 
 👤 **Silvia Sanjosé**
 
-* Github: [@SilviaSanjose](https://github.com/SilviaSanjose)
-* LinkedIn: [@silvia-sanjose](https://linkedin.com/in/silvia-sanjose)
-
-
+- Github: [@SilviaSanjose](https://github.com/SilviaSanjose)
+- LinkedIn: [@silvia-sanjose](https://linkedin.com/in/silvia-sanjose)
 
 ## 📝 License
 
-Copyright © 2021 [Silvia Sanjosé](https://github.com/SilviaSanjose).<br />
-This project is [ISC](https://github.com/SilviaSanjose/SilviaSanjosehub.io.git/blob/master/LICENSE) licensed.
+Copyright © [Silvia Sanjosé](https://github.com/SilviaSanjose).<br />
 
-***
-_This README was generated with ❤️ by Silvia Sanjosé
+---
+
+\_This README was generated with ❤️ by Silvia Sanjosé
